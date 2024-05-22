@@ -10,42 +10,40 @@
         class Food {
           private $name;
           private $price;
-          public function name(string $name) {
-            $this->name =$name;
+          public function __construct(string $name, int $price) {
+            $this->name = $name;
+            $this->price = $price;
           }
-          public function show_price(string $price) {
-            $this->price =$price;
+          public function show_price() {
+            echo $this->price . '<br>';
           }
         }
+
 
         class Animal {
           private $name;
           private $height;
           private $weight;
-          public function name(string $name) {
-            $this->name =$name;
+          
+          public function __construct(string $name, int $height, int $weight) {
+            $this->name = $name;
+            $this->height = $height;
+            $this->weight = $weight;
           }
-          public function show_height(string $height) {
-            $this->height =$height;
-          }
-          public function weight(string $weight) {
-            $this->weight =$weight;
+          public function show_height() {
+            echo $this->height . '<br>';
           }
         }
 
-        $apple = new Food();
-        $apple->name('りんご');
-        $apple->show_price('170円');
+        $potato = new Food('potato', 250);
+        $dog = new Animal('dog', 60, 5000);
 
-        $dog = new Animal();
-        $dog->name('ヨークシャテリア');
-        $dog->show_height('30cm');
-        $dog->weight('4.5kg');
-
-        print_r($apple);
+        print_r($potato);
         echo '<br>';
         print_r($dog);
-
+        echo '<br>';
+        echo $potato->show_price();
+        echo $dog->show_height();
       
       ?>
     </p>
